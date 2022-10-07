@@ -1,0 +1,19 @@
+{
+  "todoItems": [
+    {
+      "id": 1,
+      "label": "label 1",
+      "status": "open"
+    },
+    {
+      "id": 2,
+      "label": "label 2",
+      "status": "open"
+    },
+    {
+      "id": 3,
+      "label": "label 3",
+      "status": "open"
+    }
+  ]
+}
