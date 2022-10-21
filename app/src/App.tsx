@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
+import AddItem from './components/AddItem';
 import TodoList from './components/TodoList';
 import { ITodoItem } from './types';
 
@@ -21,9 +21,20 @@ function App() {
     return data;
   }
 
+  const deleteItem = (id: number) => {
+    const updatedItems = todoItems.filter(item => item.id !== id)
+    setTodoItems(updatedItems)
+  }
+
+  const addItem = (label: string) => {
+    const newItem: ITodoItem = {label, status: 'open', id: Math.floor(Math.random() * 9999)}
+    setTodoItems([...todoItems, newItem])
+  }
+
   return (
     <div className="App">
-      <TodoList todoItems={todoItems}/>
+      <AddItem addItem={addItem}/>
+      <TodoList todoItems={todoItems} deleteItem={deleteItem}/>
     </div>
   );
 }
